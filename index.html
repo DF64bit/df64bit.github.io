@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createstring(length){
+    var numbers = ["1","2","3","4","5","6","7","8","9"];
+    var str = "";
+    for (var i = 0;i<length;i++){
+        var str = str+numbers[Math.floor(Math.random() * 9)];
+    }
+    return str;
+}
+function sleep(waitMsec) {
+    var startMsec = new Date();
+    while (new Date() - startMsec < waitMsec);
+  }
+    var tabtitle = createstring(9);
+    var dataurl = "data:text/html;charset=utf-8,<html><head><title>";
+    dataurl = dataurl+tabtitle;
+    dataurl = dataurl+"</title></head><body>";
+    dataurl = dataurl+createstring(99);
+    dataurl = dataurl+"</body></html>";
+    document.title = tabtitle;
+    document.write(createstring(99));
+    sleep(500);
+    this.close();
+    </script>
+</body>
+</html>
